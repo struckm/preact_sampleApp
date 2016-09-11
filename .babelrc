@@ -1,6 +1,6 @@
 {
-    "presets": ["es2015"],
+    "presets": ["es2015", "stage-1"],
     "plugins": [
-        ["transform-react-jsx", {"pragma": "h"}]
+        ["transform-react-jsx", {"pragma": "h"}, "transform-class-properties"]
     ]
 }

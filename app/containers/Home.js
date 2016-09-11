@@ -4,17 +4,26 @@ import List from '../components/List';
 class Home extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            items: [],
+            value: ''
+        }
     }
 
-    renderItem() {
+    renderItem = (item) => {
         return '';
     }
 
-    render() {
+    onInput = (event) => {
+        this.setState({value: event.target.value});
+    }
+
+    render({}, {items, value}) {
         return (
             <div>
-                <input style={styles.input} />
-                <List items={[]} renderItem={this.renderItem}/>
+                <input placeholder="Search..." style={styles.input} value={value} onInput={this.onInput} />
+                <List items={items} renderItem={this.renderItem}/>
             </div>
         );
     }
